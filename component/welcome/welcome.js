@@ -12,16 +12,13 @@ const Welcome = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>새롭게 세상을 즐겨봐</Text>
-        <Text style={styles.title}>
-          어디로? <Text style={styles.highlight}>여기로</Text>
-        </Text>
+        <Text
+          style={styles.title}>{`꼬여버렸다\n아직 시작도 안해 봤는데`}</Text>
+        <Text style={styles.highlight}>코꽈인</Text>
       </View>
 
       <View style={styles.imgContainer}>
-        <Text style={styles.description}>
-          Detail description, image files, how to use....
-        </Text>
+        <Text style={styles.description}>image</Text>
         <Image
           source={{
             uri: '#',
@@ -81,7 +78,7 @@ const styles = StyleSheet.create({
     flex: 3,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#5F5FF0',
+    backgroundColor: 'rgb(225,225,225)',
   },
 
   buttons: {
