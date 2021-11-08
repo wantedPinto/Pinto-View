@@ -8,7 +8,7 @@ import {useEffect} from 'react';
 const MIN_ID_LENGTH = 5;
 const MIN_PW_LENGTH = 5;
 
-const InputList = ({navigation}) => {
+const InputList = ({navigation, checkLoginSuccess}) => {
   const [isValidButton, setIsValidButton] = useState(false);
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
@@ -21,42 +21,21 @@ const InputList = ({navigation}) => {
     }
   }, [id, pw]);
 
-  const goToChatting = () => {
-    navigation.push('ChattingMain', {id});
-  };
-
-  async function checkLoginSuccess(id, pw, callback) {
-    try {
-      const response = await tmpServer(id, pw);
-      callback();
-    } catch (error) {
-      alert(error);
-    }
-  }
-
-  function tmpServer(id, pw) {
-    if (id === 'Hongbeen' && pw === '12345678') {
-      return id;
-    } else {
-      throw new Error(`not valid user data`);
-    }
-  }
-
   return (
-    <>
+    <View style={styles.inputListContainer}>
       <Input label={'아이디'} onChangeText={setId} isSecure={false} />
       <Input label={'비밀번호'} onChangeText={setPw} isSecure={true} />
       <Pressable
         style={isValidButton ? styles.submitValid : styles.submit}
         onPress={() => {
-          isValidButton && checkLoginSuccess(id, pw, goToChatting);
+          isValidButton && checkLoginSuccess(id, pw);
         }}>
         <Text
           style={isValidButton ? styles.submitTextValid : styles.submitText}>
           완료
         </Text>
       </Pressable>
-    </>
+    </View>
   );
 };
 

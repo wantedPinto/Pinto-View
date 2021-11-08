@@ -1,6 +1,9 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
+  inputContainer: {
+    width: '100%',
+  },
   submit: {
     paddingVertical: 18,
     borderRadius: 70,

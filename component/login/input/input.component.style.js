@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   inputContainer: {
-    marginBottom: 15,
+    marginVertical: 10,
   },
   label: {
     fontSize: 16,
