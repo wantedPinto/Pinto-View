@@ -1,19 +1,12 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import 'react-native-gesture-handler';
 
-import Welcome from './component/welcome/welcome';
-import InputID from './component/signup/inputID';
-import LogIn from './component/login/login';
-import ChattingMain from './component/chatting/chatting-main/chatting-main';
+import Welcome from './src/component/welcome/welcome';
+import InputID from './src/component/signup/inputID';
+import LogIn from './src/component/login/login';
+import ChattingMain from './src/component/chatting/chatting-main/chatting-main';
 
 const Stack = createStackNavigator();
 

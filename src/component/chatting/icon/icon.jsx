@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, Text, View, Pressable} from 'react-native';
+import {Pressable} from 'react-native';
 
 import Icons from 'react-native-vector-icons/dist/FontAwesome';
 import styles from './icon.component.style';

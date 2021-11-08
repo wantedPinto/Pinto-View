@@ -23,22 +23,11 @@ export default StyleSheet.create({
     marginBottom: 30,
   },
   cameraAndVoice: {
+    width: '100%',
     flexDirection: 'row',
     marginTop: 10,
     justifyContent: 'space-between',
   },
-  cameraOnOff: {
-    backgroundColor: '#FFF079',
-    borderRadius: 70,
-    height: 60,
-    width: 280,
-  },
-  cameraOnOffText: {
-    textAlign: 'center',
-    fontSize: 18,
-    lineHeight: 60,
-  },
-
   chattingButtons: {
     width: '100%',
     marginTop: 10,

@@ -9,6 +9,7 @@ export default {
     RED: 'rgba(255, 35, 71, 1)',
     GRAY: 'rgba(165, 165, 163, 1)',
     LIGHT_GRAY: 'rgba(237, 237, 237, 1)',
+    BORDER_GRAY: 'rgba(215, 215, 215, 1)',
   },
   sizes: {
     BORDER_WIDTH: 1.5,

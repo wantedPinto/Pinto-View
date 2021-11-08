@@ -1,8 +1,8 @@
 import React from 'react';
 import {useState} from 'react';
-import {Text, TextInput, View, Pressable} from 'react-native';
+import {Text, View, Pressable} from 'react-native';
 import styles from './input-list.component.style';
-import Input from '../input/input';
+import Input from '@component/login/input/input';
 import {useEffect} from 'react';
 
 const MIN_ID_LENGTH = 5;

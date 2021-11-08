@@ -1,5 +1,4 @@
-import React, {useRef} from 'react';
-import {useState} from 'react';
+import React from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
 import CloseButton from './close-button/close-button';
 import InputList from './input-list/input-list';
