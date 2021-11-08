@@ -11,7 +11,7 @@ import {
   Pressable,
 } from 'react-native';
 
-const Main = ({navigation, route}) => {
+const ChattingMain = ({navigation, route}) => {
   useEffect(() => {
     if (route.params.id) {
       // alert('로그인 성공!');
@@ -147,4 +147,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Main;
+export default ChattingMain;

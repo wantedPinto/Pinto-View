@@ -10,7 +10,7 @@ import Welcome from './component/welcome/welcome';
 import InputID from './component/signup/inputID';
 import enterID from './component/login/enterID';
 import enterPW from './component/login/enterPW';
-import Main from './component/chatting/main/main';
+import ChattingMain from './component/chatting/chatting-main/chatting-main';
 
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
@@ -26,7 +26,7 @@ const App = () => {
         <Stack.Screen name="SignUp" component={InputID} />
         <Stack.Screen name="LogIn" component={enterID} />
         <Stack.Screen name="EnterPW" component={enterPW} />
-        <Stack.Screen name="Main" component={Main} />
+        <Stack.Screen name="ChattingMain" component={ChattingMain} />
       </Stack.Navigator>
     </NavigationContainer>
   );

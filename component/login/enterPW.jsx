@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import {useState} from 'react';
 import {
   SafeAreaView,
@@ -9,27 +9,32 @@ import {
   Pressable,
 } from 'react-native';
 
-const enterID = ({navigation}) => {
-  const inputRef = useRef(null);
-  const [isFocused, setIsFocused] = useState(false);
+const enterPW = ({navigation, route}) => {
+  const {id} = route.params;
+  const [isFocusedPW, setIsFocusedPW] = useState(false);
+  const [isFocusedID, setIsFocusedID] = useState(false);
   const [isValidButton, setIsValidButton] = useState(false);
-  const [text, setText] = useState('');
+  const [pw, setPW] = useState('');
 
-  const isFocusedHandler = () => {
-    setIsFocused(true);
+  const isFocusedOnPW = () => {
+    setIsFocusedPW(true);
   };
 
   const isBluredHandler = () => {
-    setIsFocused(false);
+    setIsFocusedPW(false);
   };
 
-  const onChangeText = text => {
-    setText(text);
-    if (text.length > 0) {
+  const onChangePW = pw => {
+    setPW(pw);
+    if (pw.length > 0) {
       setIsValidButton(true);
     } else {
       setIsValidButton(false);
     }
+  };
+
+  const goToChatting = () => {
+    navigation.push('ChattingMain', {id});
   };
 
   return (
@@ -45,26 +50,52 @@ const enterID = ({navigation}) => {
           <Text style={styles.sub}>입력을 해야 다음으로 넘어갈 수 있어요</Text>
         </View>
         <View style={styles.inputContainer}>
-          <Text style={styles.label}>아이디</Text>
+          <Text style={styles.label}>비밀번호</Text>
           <TextInput
-            onChangeText={onChangeText}
-            onFocus={isFocusedHandler}
+            onChangeText={onChangePW}
+            onFocus={isFocusedOnPW}
             onBlur={isBluredHandler}
-            style={isFocused ? styles.inputFocused : styles.input}
-            placeholder="정확하게 입력해주세요"></TextInput>
-          <Pressable
-            style={isValidButton ? styles.nextValid : styles.next}
-            onPress={() => navigation.push('EnterPW', {id: text})}>
-            <Text
-              style={isValidButton ? styles.nextTextValid : styles.nextText}>
-              다음
-            </Text>
-          </Pressable>
+            style={isFocusedPW ? styles.inputFocused : styles.input}
+            placeholder="정확하게 입력해주세요"
+            secureTextEntry={true}></TextInput>
+          <View style={styles.buttons}>
+            <Pressable
+              style={styles.previous}
+              onPress={() => navigation.goBack()}>
+              <Text style={styles.previousText}>이전</Text>
+            </Pressable>
+            <Pressable style={isValidButton ? styles.nextValid : styles.next}>
+              <Text
+                style={isValidButton ? styles.nextTextValid : styles.nextText}
+                onPress={() => {
+                  checkLoginSuccess(id, pw, goToChatting);
+                }}>
+                완료
+              </Text>
+            </Pressable>
+          </View>
         </View>
       </View>
     </SafeAreaView>
   );
 };
+
+async function checkLoginSuccess(id, pw, callback) {
+  try {
+    const response = await tmpServer(id, pw);
+    callback();
+  } catch (error) {
+    alert(error);
+  }
+}
+
+function tmpServer(id, pw) {
+  if (id === 'Hongbeen' && pw === '123') {
+    return id;
+  } else {
+    throw new Error(`not valid user data`);
+  }
+}
 
 const styles = StyleSheet.create({
   background: {
@@ -100,8 +131,8 @@ const styles = StyleSheet.create({
   sub: {
     color: '#A5A5A3',
   },
-
   label: {
+    color: '#222222',
     fontSize: 16,
     fontWeight: '400',
   },
@@ -126,6 +157,26 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 50,
     marginVertical: 10,
+  },
+  buttons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
+  },
+  previous: {
+    paddingVertical: 18,
+    borderWidth: 1.5,
+    borderStyle: 'solid',
+    borderColor: '#EDEDED',
+    borderRadius: 70,
+    width: '30%',
+    alignSelf: 'flex-start',
+  },
+  previousText: {
+    textAlign: 'center',
+    fontSize: 16,
+    fontWeight: '400',
+    color: '#A5A5A3',
   },
   next: {
     paddingVertical: 18,
@@ -155,4 +206,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default enterID;
+export default enterPW;

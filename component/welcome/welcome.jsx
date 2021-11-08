@@ -12,9 +12,10 @@ const Welcome = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Text
-          style={styles.title}>{`꼬여버렸다\n아직 시작도 안해 봤는데`}</Text>
-        <Text style={styles.highlight}>코꽈인</Text>
+        <Text style={styles.title}>대학생활과 동시에</Text>
+        <Text style={styles.title}>
+          삔또 상했다 <Text style={styles.highlight}>핀토</Text>
+        </Text>
       </View>
 
       <View style={styles.imgContainer}>
