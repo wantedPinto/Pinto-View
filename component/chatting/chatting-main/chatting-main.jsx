@@ -4,6 +4,7 @@ import Icons from 'react-native-vector-icons/dist/Ionicons';
 import FilterIcon from 'react-native-vector-icons/dist/FontAwesome';
 import {SafeAreaView, Text, View, Pressable} from 'react-native';
 import styles from './chatting-main.component.style';
+import Icon from '../icon/icon';
 
 const ChattingMain = ({navigation, route}) => {
   useEffect(() => {
@@ -18,24 +19,24 @@ const ChattingMain = ({navigation, route}) => {
     <SafeAreaView style={styles.container}>
       <View style={styles.main}>
         <View style={styles.topButtons}>
-          <Pressable>
-            <Icons name="ios-settings-sharp" size={22} style={styles.topIcon} />
-          </Pressable>
-          <Pressable>
-            <Icons name="person" size={22} style={styles.topIcon} />
-          </Pressable>
+          <Icon name={'gear'} color="#FDFDFA" />
+          <Icon name={'user'} color="#FDFDFA" />
         </View>
         <View style={styles.bottomButtons}>
-          <Pressable style={styles.filterBackground}>
-            <FilterIcon name="filter" style={styles.filter} size={24} />
-          </Pressable>
+          <Icon
+            name={'filter'}
+            background={'rgba(200, 200, 200, 0.7)'}
+            color={'#FCFDFA'}
+          />
           <View style={styles.cameraAndVoice}>
             <Pressable style={styles.cameraOnOff}>
               <Text style={styles.cameraOnOffText}>카메라 켜기</Text>
             </Pressable>
-            <Pressable style={styles.voiceOnOffBackground}>
-              <Icons name="mic-off" style={styles.voiceOnOff} size={24} />
-            </Pressable>
+            <Icon
+              name="microphone-slash"
+              background={'#FCFDFA'}
+              color={'#FF2347'}
+            />
           </View>
         </View>
       </View>

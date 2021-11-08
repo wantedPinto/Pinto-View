@@ -11,58 +11,32 @@ export default StyleSheet.create({
     width: '100%',
     backgroundColor: 'rgb(205,205,205)',
   },
-  topIcon: {
-    color: '#FDFDFA',
-  },
   topButtons: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginHorizontal: 20,
-    marginVertical: 25,
+    marginHorizontal: 10,
+    marginVertical: 20,
   },
   bottomButtons: {
     alignItems: 'flex-end',
-  },
-  filterBackground: {
-    width: 60,
-    height: 60,
-    backgroundColor: 'rgba(200, 200, 200, 0.7)',
-    borderRadius: 60,
     marginHorizontal: 20,
-    marginBottom: 10,
-  },
-  filter: {
-    lineHeight: 60,
-    color: '#FCFDFA',
-    textAlign: 'center',
+    marginBottom: 30,
   },
   cameraAndVoice: {
     flexDirection: 'row',
-    marginHorizontal: 20,
-    marginBottom: 30,
+    marginTop: 10,
+    justifyContent: 'space-between',
   },
   cameraOnOff: {
     backgroundColor: '#FFF079',
     borderRadius: 70,
     height: 60,
-    width: '80%',
+    width: 280,
   },
   cameraOnOffText: {
     textAlign: 'center',
     fontSize: 18,
     lineHeight: 60,
-  },
-  voiceOnOffBackground: {
-    width: 60,
-    height: 60,
-    backgroundColor: '#FCFDFA',
-    borderRadius: 60,
-    marginLeft: 10,
-  },
-  voiceOnOff: {
-    lineHeight: 60,
-    color: '#FF2347',
-    textAlign: 'center',
   },
 
   chattingButtons: {
