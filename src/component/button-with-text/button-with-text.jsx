@@ -1,5 +1,5 @@
 import React from 'react';
-import {Pressable, Text} from 'react-native';
+import {StyleSheet, Pressable, Text} from 'react-native';
 import commonStyle from '@src/styles/style';
 
 const {sizes} = commonStyle;
@@ -13,16 +13,18 @@ const ButtonWithText = ({
   color,
   border,
   borderColor,
+  onPress,
 }) => {
   return (
     <Pressable
+      onPress={onPress}
       width={width}
       backgroundColor={background || 'transparent'}
       borderStyle={border || 'solid'}
       borderWidth={sizes.BORDER_WIDTH}
       borderColor={borderColor || background}
       style={styles.button}>
-      <Text color={color} style={styles.buttonText}>
+      <Text style={StyleSheet.compose(styles.buttonText, {color: color})}>
         {title}
       </Text>
     </Pressable>

@@ -1,14 +1,16 @@
 import React from 'react';
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 
 import {SafeAreaView, View} from 'react-native';
 import styles from './chatting-main.component.style';
-import Icon from '@component/chatting/icon/icon';
-import ButtonWithText from '@component/button-with-text/button-with-text';
-import commonStyle from '@src/styles/style';
-const {colors} = commonStyle;
+
+import TopButtons from './top-buttons/top-buttons';
+import BottomButtons from './bottom-buttons/bottom-buttons';
+import ChattingButtons from './chatting-buttons/chatting-buttons';
 
 const ChattingMain = ({navigation, route}) => {
+  const [isCameraOn, setisCameraOn] = useState(false);
+
   useEffect(() => {
     if (route.params.id) {
       // alert('로그인 성공!');
@@ -17,7 +19,9 @@ const ChattingMain = ({navigation, route}) => {
     }
   }, []);
 
-  const handleCamera = () => {};
+  const handleCamera = () => {
+    setisCameraOn(!isCameraOn);
+  };
 
   const handleVoice = () => {};
 
@@ -28,47 +32,18 @@ const ChattingMain = ({navigation, route}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.main}>
-        <View style={styles.topButtons}>
-          <Icon name={'gear'} color={colors.WHITE} />
-          <Icon name={'user'} color={colors.WHITE} />
-        </View>
-        <View style={styles.bottomButtons}>
-          <Icon name={'filter'} background={colors.GRAY} color={colors.WHITE} />
-          <View style={styles.cameraAndVoice}>
-            <ButtonWithText
-              onPress={handleCamera}
-              title={'카메라 켜기'}
-              width={'80%'}
-              background={colors.YELLOW}
-              color={colors.BLACK}
-            />
-            <Icon
-              onPress={handleVoice}
-              name="microphone-slash"
-              background={colors.WHITE}
-              color={colors.RED}
-            />
-          </View>
-        </View>
-      </View>
-      <View style={styles.chattingButtons}>
-        <ButtonWithText
-          onPress={handlePersonalChat}
-          title={'개인채팅'}
-          width={'45%'}
-          color={colors.GRAY}
-          border={'solid'}
-          borderColor={colors.BORDER_GRAY}
-        />
-        <ButtonWithText
-          onPress={handleGroupChat}
-          title={'그룹채팅'}
-          width={'45%'}
-          color={colors.GRAY}
-          border={'solid'}
-          borderColor={colors.BORDER_GRAY}
+        <TopButtons />
+        <BottomButtons
+          isCameraOn={isCameraOn}
+          handleCamera={handleCamera}
+          handleVoice={handleVoice}
         />
       </View>
+      <ChattingButtons
+        isCameraOn={isCameraOn}
+        handlePersonalChat={handlePersonalChat}
+        handleGroupChat={handleGroupChat}
+      />
     </SafeAreaView>
   );
 };

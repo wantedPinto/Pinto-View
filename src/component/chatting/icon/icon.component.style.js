@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-const COVER_SIZE = 60;
+const COVER_SIZE = 50;
 
 export default StyleSheet.create({
   iconBackground: {
