@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import commonStyle from '@src/styles/style';
-const {colors} = commonStyle;
+const {colors, sizes} = commonStyle;
 
 export default StyleSheet.create({
   textContainer: {
@@ -9,12 +9,14 @@ export default StyleSheet.create({
     marginLeft: 58,
   },
   title: {
-    fontSize: 30,
-    fontWeight: '900',
+    fontSize: sizes.FONT_LARGE,
+    fontWeight: sizes.SEMI_BOLD,
     color: colors.LIGHT_BLACK,
     marginVertical: 10,
   },
   sub: {
     color: colors.GRAY,
+    fontSize: sizes.FONT_SMALL,
+    fontWeight: sizes.REGULAR_BOLD,
   },
 });

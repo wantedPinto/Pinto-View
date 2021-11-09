@@ -14,12 +14,13 @@ export default {
   sizes: {
     BORDER_WIDTH: 1.5,
 
-    FONT_SMALL: 12,
+    FONT_SMALL: 14,
     FONT_MEDIUM: 16,
-    FONT_LARGE: 20,
+    FONT_LARGE: 28,
 
-    FONT_BOLD: '700',
-    FONT_THIN: '300',
+    SEMI_BOLD: '800',
+    MEDUIM_BOLD: '600',
+    REGULAR_BOLD: '400',
 
     MARGIN_10: 10,
     MARGIN_15: 15,

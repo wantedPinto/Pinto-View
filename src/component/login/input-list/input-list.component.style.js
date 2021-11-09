@@ -30,15 +30,15 @@ export default StyleSheet.create({
     alignSelf: 'flex-end',
   },
   submitText: {
-    textAlign: 'center',
-    fontSize: 16,
-    fontWeight: '400',
     color: colors.WHITE,
+    textAlign: 'center',
+    fontSize: sizes.FONT_MEDIUM,
+    fontWeight: sizes.MEDIUM_BOLD,
   },
   submitTextValid: {
     color: colors.BLACK,
     textAlign: 'center',
-    fontSize: 16,
-    fontWeight: '400',
+    fontSize: sizes.FONT_MEDIUM,
+    fontWeight: sizes.MEDIUM_BOLD,
   },
 });

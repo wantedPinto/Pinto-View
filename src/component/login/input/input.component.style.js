@@ -8,8 +8,8 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   label: {
-    fontSize: 16,
-    fontWeight: '400',
+    fontSize: sizes.FONT_MEDIUM,
+    fontWeight: sizes.MEDUIM_BOLD,
     color: colors.LIGHT_BLACK,
     paddingLeft: 25,
     paddingBottom: 5,
