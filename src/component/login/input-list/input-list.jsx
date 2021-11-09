@@ -24,6 +24,7 @@ const InputList = ({navigation, checkLoginSuccess}) => {
   return (
     <View style={styles.inputListContainer}>
       <Input label={'아이디'} onChangeText={setId} isSecure={false} />
+      <View style={styles.Horizon}></View>
       <Input label={'비밀번호'} onChangeText={setPw} isSecure={true} />
       <Pressable
         style={isValidButton ? styles.submitValid : styles.submit}

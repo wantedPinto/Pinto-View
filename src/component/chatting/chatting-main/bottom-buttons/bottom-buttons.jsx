@@ -1,6 +1,6 @@
 import React from 'react';
 import {View} from 'react-native';
-import Icon from '@component/chatting/icon/icon';
+import Icon from '@component/icon/icon';
 import ButtonWithText from '@component/button-with-text/button-with-text';
 import styles from './bottom-buttons.component.style';
 import commonStyle from '@src/styles/style';

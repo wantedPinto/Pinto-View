@@ -1,18 +1,29 @@
 import {StyleSheet} from 'react-native';
+import commonStyle from '@src/styles/style';
+const {colors, sizes} = commonStyle;
 
 export default StyleSheet.create({
-  inputContainer: {
+  inputListContainer: {
     width: '100%',
   },
+  Horizon: {
+    width: '100%',
+    borderBottomColor: colors.LIGHT_GRAY,
+    borderBottomWidth: sizes.BORDER_WIDTH,
+    borderBottomStyle: 'solid',
+    marginVertical: 30,
+  },
   submit: {
+    marginTop: 10,
+    marginRight: 26,
     paddingVertical: 18,
     borderRadius: 70,
-    backgroundColor: '#BCBCBB',
-    width: '30%',
+    backgroundColor: colors.GRAY,
+    width: 100,
     alignSelf: 'flex-end',
   },
   submitValid: {
-    backgroundColor: '#FFF079',
+    backgroundColor: colors.YELLOW,
     paddingVertical: 18,
     borderRadius: 70,
     width: '30%',
@@ -22,10 +33,10 @@ export default StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
     fontWeight: '400',
-    color: '#FCFDFA',
+    color: colors.WHITE,
   },
   submitTextValid: {
-    color: '#222222',
+    color: colors.BLACK,
     textAlign: 'center',
     fontSize: 16,
     fontWeight: '400',

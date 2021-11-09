@@ -1,6 +1,6 @@
 import React from 'react';
 import {View} from 'react-native';
-import Icon from '@component/chatting/icon/icon';
+import Icon from '@component/icon/icon';
 import styles from './top-buttons.component.style';
 import commonStyle from '@src/styles/style';
 const {colors} = commonStyle;

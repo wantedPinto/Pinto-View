@@ -1,32 +1,39 @@
 import {StyleSheet} from 'react-native';
+import commonStyle from '@src/styles/style';
+const {colors, sizes} = commonStyle;
 
 export default StyleSheet.create({
   inputContainer: {
-    marginVertical: 10,
+    width: '100%',
+    alignItems: 'center',
   },
   label: {
     fontSize: 16,
     fontWeight: '400',
+    color: colors.LIGHT_BLACK,
+    paddingLeft: 25,
+    paddingBottom: 5,
+    alignSelf: 'flex-start',
   },
   input: {
     borderStyle: 'solid',
-    borderColor: '#EDEDED',
-    color: '#222222',
-    borderWidth: 1.5,
+    borderColor: colors.LIGHT_GRAY,
+    color: colors.BLACK,
+    borderWidth: sizes.BORDER_WIDTH,
     borderRadius: 30,
     padding: 15,
-    width: '100%',
+    width: '86%',
     height: 50,
-    marginVertical: 10,
+    marginTop: 10,
   },
   inputFocused: {
     borderStyle: 'solid',
-    borderColor: '#5F5FF0',
-    color: '#222222',
-    borderWidth: 1.5,
+    borderColor: colors.BLUE,
+    color: colors.BLACK,
+    borderWidth: sizes.BORDER_WIDTH,
     borderRadius: 30,
     padding: 15,
-    width: '100%',
+    width: '86%',
     height: 50,
     marginVertical: 10,
   },

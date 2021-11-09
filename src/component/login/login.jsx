@@ -1,8 +1,12 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
-import CloseButton from './close-button/close-button';
+import Icon from '@component/icon/icon';
 import InputList from './input-list/input-list';
 import Description from './description/description';
+
+import styles from './login.component.style';
+import commonStyle from '@src/styles/style';
+const {colors} = commonStyle;
 
 const LogIn = ({navigation}) => {
   const goToHome = () => {
@@ -33,29 +37,19 @@ const LogIn = ({navigation}) => {
   return (
     <SafeAreaView style={styles.background}>
       <View style={styles.container}>
-        <CloseButton goToHome={goToHome} />
-        <Description
-          title={'로그인'}
-          sub={'입력을 해야 다음으로 넘어갈 수 있어요'}
-        />
-        <InputList
-          navigation={navigation}
-          checkLoginSuccess={checkLoginSuccess}
-        />
+        <View style={styles.close}>
+          <Icon name="close" color={colors.LIGHT_BLACK} onPress={goToHome} />
+        </View>
+        <View style={styles.contents}>
+          <Description title={'로그인'} sub={'반갑습니다. 핀토입니다!'} />
+          <InputList
+            navigation={navigation}
+            checkLoginSuccess={checkLoginSuccess}
+          />
+        </View>
       </View>
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  background: {
-    backgroundColor: 'white',
-    flex: 1,
-  },
-  container: {
-    margin: 30,
-    flex: 1,
-  },
-});
 
 export default LogIn;
