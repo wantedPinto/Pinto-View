@@ -10,7 +10,7 @@ const Icon = ({name, background, color, onPress}) => {
       onPress={onPress}
       backgroundColor={background || 'transparent'}
       style={styles.iconBackground}>
-      <Icons color={color} name={name} size={24} style={styles.icon}></Icons>
+      <Icons color={color} name={name} size={26} style={styles.icon}></Icons>
     </Pressable>
   );
 };

@@ -14,10 +14,10 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Home" component={Welcome} />
+        {/* <Stack.Screen name="Home" component={Welcome} /> */}
+        <Stack.Screen name="ChattingMain" component={ChattingMain} />
         <Stack.Screen name="SignUp" component={InputID} />
         <Stack.Screen name="LogIn" component={LogIn} />
-        <Stack.Screen name="ChattingMain" component={ChattingMain} />
       </Stack.Navigator>
     </NavigationContainer>
   );

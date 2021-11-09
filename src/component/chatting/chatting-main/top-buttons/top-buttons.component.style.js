@@ -4,6 +4,7 @@ export default StyleSheet.create({
   topButtons: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    margin: 5,
+    marginHorizontal: 5,
+    marginTop: 22,
   },
 });

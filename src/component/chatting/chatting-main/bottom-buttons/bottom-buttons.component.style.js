@@ -6,7 +6,7 @@ export default StyleSheet.create({
     marginHorizontal: 20,
     marginBottom: 20,
   },
-  cameraAndVoice: {
+  cameraAndFilter: {
     width: '100%',
     flexDirection: 'row',
     marginTop: 10,
