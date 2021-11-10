@@ -1,17 +1,17 @@
 import React from 'react';
 import {useState} from 'react';
-import {Text, View, Pressable} from 'react-native';
+import {View} from 'react-native';
 import styles from './input-list.component.style';
-import Input from '@component/login/input/input';
+import Input from '@component/input/input';
 import ButtonWithText from '@component/button-with-text/button-with-text';
 import {useEffect} from 'react';
 import commonStyle from '@src/styles/style';
-const {colors, sizes} = commonStyle;
+const {colors} = commonStyle;
 
 const MIN_ID_LENGTH = 5;
 const MIN_PW_LENGTH = 5;
 
-const InputList = ({navigation, checkLoginSuccess}) => {
+const InputList = ({checkLoginSuccess}) => {
   const [isValidButton, setIsValidButton] = useState(false);
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
@@ -26,10 +26,19 @@ const InputList = ({navigation, checkLoginSuccess}) => {
 
   return (
     <View style={styles.inputListContainer}>
-      <Input label={'아이디'} onChangeText={setId} isSecure={false} />
+      <Input
+        label={'아이디'}
+        onChangeText={setId}
+        isSecure={false}
+        placeholder="정확하게 입력해주세요"
+      />
       <View style={styles.Horizon}></View>
-      <Input label={'비밀번호'} onChangeText={setPw} isSecure={true} />
-
+      <Input
+        label={'비밀번호'}
+        onChangeText={setPw}
+        isSecure={true}
+        placeholder="정확하게 입력해주세요"
+      />
       <View style={styles.submit}>
         <ButtonWithText
           title="완료"

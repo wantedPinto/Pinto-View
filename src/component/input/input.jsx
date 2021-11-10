@@ -3,9 +3,9 @@ import {useState} from 'react';
 import {Text, TextInput, View} from 'react-native';
 import styles from './input.component.style';
 import commonStyle from '@src/styles/style';
-const {colors, sizes} = commonStyle;
+const {colors} = commonStyle;
 
-const Input = ({label, onChangeText, isSecure}) => {
+const Input = ({label, onChangeText, isSecure, placeholder}) => {
   const [isFocused, setIsFocused] = useState(false);
 
   const isFocusedHandler = () => {
@@ -23,7 +23,7 @@ const Input = ({label, onChangeText, isSecure}) => {
         onFocus={isFocusedHandler}
         onBlur={isBluredHandler}
         style={isFocused ? styles.inputFocused : styles.input}
-        placeholder="정확하게 입력해주세요"
+        placeholder={placeholder}
         placeholderTextColor={colors.GRAY}
         secureTextEntry={isSecure}></TextInput>
     </View>
