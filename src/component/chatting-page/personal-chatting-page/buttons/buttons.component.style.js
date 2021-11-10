@@ -4,7 +4,8 @@ export default StyleSheet.create({
   buttonsContainer: {
     justifyContent: 'space-between',
     flexDirection: 'row',
-    margin: 32,
+    marginBottom: 26,
+    marginHorizontal: 22,
   },
   VoiceAndEnd: {
     flexDirection: 'row',

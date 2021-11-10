@@ -39,38 +39,15 @@ const BottomButtons = ({isCameraOn, handleCamera}) => {
     );
   };
 
-  // isVoiceOn ? voiceOn() : voiceOff()
-  // const voiceOn = () => {
-  //   return (
-  //     <>
-  //       <Icon
-  //         onPress={handleVoiceButton}
-  //         name="microphone-slash"
-  //         background={colors.WHITE}
-  //         color={colors.RED}
-  //       />
-  //     </>
-  //   );
-  // };
-
-  // const voiceOff = () => {
-  //   return (
-  //     <>
-  //       <Icon
-  //         onPress={handleVoiceButton}
-  //         name="microphone"
-  //         background={colors.WHITE}
-  //         color={colors.GREEN}
-  //       />
-  //     </>
-  //   );
-  // };
-
   return (
     <View style={styles.bottomButtons}>
       <View style={styles.cameraAndFilter}>
         {isCameraOn ? cameraOn() : cameraOff()}
-        <Icon name={'filter'} background={colors.GRAY} color={colors.WHITE} />
+        <Icon
+          name={'filter'}
+          background={colors.LIGHT_GRAY_TRANS}
+          color={colors.WHITE}
+        />
       </View>
     </View>
   );

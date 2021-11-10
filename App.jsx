@@ -3,11 +3,10 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import 'react-native-gesture-handler';
 
-import Welcome from './src/component/welcome/welcome';
-import InputID from './src/component/signup/inputID';
-import LogIn from './src/component/login/login';
-import ChattingMain from './src/component/chatting/chatting-main/chatting-main';
-import PersonalChatting from './src/component/chatting/personal-chatting/personal-chatting';
+import WelcomePage from './src/component/welcome-page/welcome-page';
+import LogInPage from './src/component/login-page/login-page';
+import ChattingMainPage from './src/component/chatting-page/chatting-main-page/chatting-main-page';
+import PersonalChattingPage from './src/component/chatting-page/personal-chatting-page/personal-chatting-page';
 
 const Stack = createStackNavigator();
 
@@ -15,11 +14,19 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Home" component={Welcome} />
-        <Stack.Screen name="SignUp" component={InputID} />
-        <Stack.Screen name="LogIn" component={LogIn} />
-        <Stack.Screen name="ChattingMain" component={ChattingMain} />
-        <Stack.Screen name="PersonalChatting" component={PersonalChatting} />
+        <Stack.Group>
+          <Stack.Screen name="Home" component={WelcomePage} />
+        </Stack.Group>
+        <Stack.Group screenOptions={{presentation: 'modal'}}>
+          <Stack.Screen name="LogIn" component={LogInPage} />
+        </Stack.Group>
+        <Stack.Group>
+          <Stack.Screen name="ChattingMain" component={ChattingMainPage} />
+          <Stack.Screen
+            name="PersonalChatting"
+            component={PersonalChattingPage}
+          />
+        </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>
   );

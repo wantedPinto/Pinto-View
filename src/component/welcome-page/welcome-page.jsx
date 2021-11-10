@@ -5,11 +5,11 @@ const {colors, sizes} = commonStyle;
 
 import Header from '@component/header/header';
 import ButtonWithText from '@component/button-with-text/button-with-text';
-import styles from './welcome.component.style';
+import styles from './welcome-page.component.style';
 
 const TITLE = `우리 학교\n친구는 어디있나`;
 
-const Welcome = ({navigation}) => {
+const WelcomePage = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -17,9 +17,9 @@ const Welcome = ({navigation}) => {
       </View>
       <View style={styles.imgContainer}>
         <Image
-          source={{
-            uri: '#',
-          }}
+          // source={{
+          //   uri: '#',
+          // }}
           style={styles.img}
         />
       </View>
@@ -42,4 +42,4 @@ const Welcome = ({navigation}) => {
   );
 };
 
-export default Welcome;
+export default WelcomePage;

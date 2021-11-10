@@ -8,10 +8,7 @@ import {useEffect} from 'react';
 import commonStyle from '@src/styles/style';
 const {colors} = commonStyle;
 
-const MIN_ID_LENGTH = 5;
-const MIN_PW_LENGTH = 5;
-
-const InputList = ({checkLoginSuccess}) => {
+const InputList = ({checkLoginSuccess, MIN_ID_LENGTH, MIN_PW_LENGTH}) => {
   const [isValidButton, setIsValidButton] = useState(false);
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');

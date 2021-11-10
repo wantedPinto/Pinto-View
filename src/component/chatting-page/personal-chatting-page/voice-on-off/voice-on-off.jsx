@@ -3,6 +3,7 @@ import Icon from '@component/icon/icon';
 import {useState} from 'react/cjs/react.development';
 
 import commonStyle from '@src/styles/style';
+import {useEffect} from 'react';
 const {colors} = commonStyle;
 
 const VoiceOnOff = ({handleVoice}) => {
@@ -10,8 +11,10 @@ const VoiceOnOff = ({handleVoice}) => {
 
   const toggleVoice = () => {
     setIsVoiceOn(!isVoiceOn);
-    handleVoice(isVoiceOn);
   };
+  useEffect(() => {
+    handleVoice(isVoiceOn);
+  }, [isVoiceOn]);
 
   return isVoiceOn ? (
     <>

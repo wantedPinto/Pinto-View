@@ -16,7 +16,7 @@ const Icon = ({name, background, size, color, onPress}) => {
         <Ionicons
           color={color}
           name={name}
-          size={size || 20}
+          size={size || 22}
           style={styles.icon}></Ionicons>
       </Pressable>
     );
@@ -26,7 +26,11 @@ const Icon = ({name, background, size, color, onPress}) => {
         onPress={onPress}
         backgroundColor={background || 'transparent'}
         style={styles.iconBackground}>
-        <MCI color={color} name={name} size={25} style={styles.icon}></MCI>
+        <MCI
+          color={color}
+          name={name}
+          size={size || 22}
+          style={styles.icon}></MCI>
       </Pressable>
     );
 
@@ -35,7 +39,11 @@ const Icon = ({name, background, size, color, onPress}) => {
       onPress={onPress}
       backgroundColor={background || 'transparent'}
       style={styles.iconBackground}>
-      <Icons color={color} name={name} size={26} style={styles.icon}></Icons>
+      <Icons
+        color={color}
+        name={name}
+        size={size || 22}
+        style={styles.icon}></Icons>
     </Pressable>
   );
 };

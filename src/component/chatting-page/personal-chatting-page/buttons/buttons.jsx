@@ -5,20 +5,17 @@ import Icon from '@component/icon/icon';
 
 import commonStyle from '@src/styles/style';
 import VoiceOnOff from '../voice-on-off/voice-on-off';
+import style from '../../../../styles/style';
 const {colors, sizes} = commonStyle;
 
-const Buttons = ({
-  navigator,
-  handleVoice,
-  handleCameraSwitch,
-  handleEndCall,
-}) => {
+const Buttons = ({handleVoice, handleCameraSwitch, handleEndCall}) => {
   return (
     <View style={styles.buttonsContainer}>
       <Icon
         onPress={handleCameraSwitch}
         style={styles.refresh}
         name="refresh"
+        size={19}
         background={colors.WHITE_TRANS}
         color={colors.LIGHT_BLACK}></Icon>
       <View style={styles.VoiceAndEnd}>

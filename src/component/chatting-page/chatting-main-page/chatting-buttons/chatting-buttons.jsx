@@ -5,11 +5,15 @@ import styles from './chatting-buttons.component.style';
 import commonStyle from '@src/styles/style';
 const {colors} = commonStyle;
 
-const chattingButtons = ({isCameraOn, handlePersonalChat, handleGroupChat}) => {
+const chattingButtons = ({
+  isCameraOn,
+  handlePersonalChattting,
+  handleGroupChattting,
+}) => {
   return (
     <View style={styles.chattingButtons}>
       <ButtonWithText
-        onPress={handlePersonalChat}
+        onPress={handlePersonalChattting}
         title={'개인채팅'}
         width={'40%'}
         color={isCameraOn ? colors.BLUE : colors.GRAY}
@@ -17,7 +21,7 @@ const chattingButtons = ({isCameraOn, handlePersonalChat, handleGroupChat}) => {
         borderColor={isCameraOn ? colors.BLUE : colors.BORDER_GRAY}
       />
       <ButtonWithText
-        onPress={handleGroupChat}
+        onPress={handleGroupChattting}
         title={'그룹채팅'}
         width={'40%'}
         color={isCameraOn ? colors.BLUE : colors.GRAY}

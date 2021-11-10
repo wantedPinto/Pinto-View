@@ -11,13 +11,13 @@ export default StyleSheet.create({
     top: 0,
     height: '50%',
     width: '100%',
-    backgroundColor: 'tomato',
+    backgroundColor: 'rgba(0, 0, 0, 0.16)',
   },
   me: {
     position: 'absolute',
     top: '50%',
     height: '50%',
     width: '100%',
-    backgroundColor: 'salmon',
+    backgroundColor: 'rgba(120, 122, 122, 0.6)',
   },
 });

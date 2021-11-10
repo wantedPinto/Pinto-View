@@ -1,10 +1,8 @@
 import React from 'react';
 import {StyleSheet, Pressable, Text} from 'react-native';
-import commonStyle from '@src/styles/style';
-
-const {sizes} = commonStyle;
-
 import styles from './button-with-text.component.style';
+import commonStyle from '@src/styles/style';
+const {sizes} = commonStyle;
 
 const ButtonWithText = ({
   title,

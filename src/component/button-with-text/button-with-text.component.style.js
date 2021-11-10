@@ -7,7 +7,7 @@ export default StyleSheet.create({
     borderRadius: 70,
   },
   buttonText: {
-    paddingVertical: 16,
+    paddingVertical: 18,
     textAlign: 'center',
     fontSize: sizes.FONT_MEDIUM,
   },

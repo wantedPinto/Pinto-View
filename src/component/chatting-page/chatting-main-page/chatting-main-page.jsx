@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react';
 import {BlurView} from '@react-native-community/blur';
 import {SafeAreaView, View} from 'react-native';
 import {RNCamera} from 'react-native-camera';
-import styles from './chatting-main.component.style';
+import styles from './chatting-main-page.component.style';
 
 import TopButtons from './top-buttons/top-buttons';
 import BottomButtons from './bottom-buttons/bottom-buttons';
@@ -11,26 +11,36 @@ import ChattingButtons from './chatting-buttons/chatting-buttons';
 
 const BLUR_AMOUNT = 14;
 
-const ChattingMain = ({navigation, route}) => {
+const ChattingMainPage = ({navigation, route}) => {
   const [isCameraOn, setisCameraOn] = useState(false);
-  const user = route.params.user;
-  useEffect(() => {
-    if (user) {
-      // alert('로그인 성공!');
-    } else {
-      // alert('자동 로그인 성공!');
-    }
-  }, []);
+  const {userData} = route.params;
+
+  // useEffect(() => {
+  //   if (user) {
+  //     // alert('로그인 성공!');
+  //   } else {
+  //     // alert('자동 로그인 성공!');
+  //   }
+  // }, []);
 
   const handleCamera = () => {
     setisCameraOn(!isCameraOn);
   };
 
-  const handlePersonalChat = () => {
-    isCameraOn && navigation.push('PersonalChatting', {user});
+  const handlePersonalChattting = () => {
+    isCameraOn &&
+      navigation.reset({
+        index: 0,
+        routes: [
+          {
+            name: 'PersonalChatting',
+            params: {userData: userData},
+          },
+        ],
+      });
   };
 
-  const handleGroupChat = () => {};
+  const handleGroupChattting = () => {};
 
   return (
     <View style={styles.container}>
@@ -51,11 +61,11 @@ const ChattingMain = ({navigation, route}) => {
 
       <ChattingButtons
         isCameraOn={isCameraOn}
-        handlePersonalChat={handlePersonalChat}
-        handleGroupChat={handleGroupChat}
+        handlePersonalChattting={handlePersonalChattting}
+        handleGroupChattting={handleGroupChattting}
       />
     </View>
   );
 };
 
-export default ChattingMain;
+export default ChattingMainPage;
