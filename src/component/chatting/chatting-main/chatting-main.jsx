@@ -13,20 +13,22 @@ const BLUR_AMOUNT = 14;
 
 const ChattingMain = ({navigation, route}) => {
   const [isCameraOn, setisCameraOn] = useState(false);
-
+  const user = route.params.user;
   useEffect(() => {
-    // if (route.params.id) {
-    //   // alert('로그인 성공!');
-    // } else {
-    //   // alert('자동 로그인 성공!');
-    // }
+    if (user) {
+      // alert('로그인 성공!');
+    } else {
+      // alert('자동 로그인 성공!');
+    }
   }, []);
 
   const handleCamera = () => {
     setisCameraOn(!isCameraOn);
   };
 
-  const handlePersonalChat = () => {};
+  const handlePersonalChat = () => {
+    isCameraOn && navigation.push('PersonalChatting', {user});
+  };
 
   const handleGroupChat = () => {};
 

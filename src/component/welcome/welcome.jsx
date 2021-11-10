@@ -8,14 +8,14 @@ import {
   Pressable,
 } from 'react-native';
 
+const TITLE = `우리 학교\n친구는 어디있나`;
+
 const Welcome = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>대학생활과 동시에</Text>
-        <Text style={styles.title}>
-          삔또 상했다 <Text style={styles.highlight}>핀토</Text>
-        </Text>
+        <Text style={styles.title}>{TITLE}</Text>
+        <Text style={styles.highlight}>핀토</Text>
       </View>
 
       <View style={styles.imgContainer}>

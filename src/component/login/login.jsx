@@ -13,8 +13,8 @@ const LogIn = ({navigation}) => {
     navigation.navigate('Home');
   };
 
-  const goToChatting = id => {
-    navigation.push('ChattingMain', {id});
+  const goToChatting = user => {
+    navigation.push('ChattingMain', {user});
   };
 
   async function checkLoginSuccess(id, pw) {
@@ -27,7 +27,7 @@ const LogIn = ({navigation}) => {
   }
 
   function tmpServer(id, pw) {
-    if (id === 'Hongbeen' && pw === '12345678') {
+    if (id === '1' && pw === '1') {
       return id;
     } else {
       throw new Error(`not valid user data`);

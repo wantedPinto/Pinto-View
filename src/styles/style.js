@@ -4,6 +4,7 @@ export default {
     BLACK: 'rgba(34, 34, 34, 1)',
     LIGHT_BLACK: 'rgba(68, 68, 68, 1)',
     WHITE: 'rgba(253, 253, 250, 1)',
+    WHITE_TRANS: 'rgba(253, 253, 250, 0.9)',
     GREEN: 'rgba(0, 208, 92, 1)',
     YELLOW: 'rgba(255, 240, 121, 1)',
     RED: 'rgba(255, 35, 71, 1)',
