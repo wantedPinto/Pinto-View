@@ -12,7 +12,7 @@ export default StyleSheet.create({
     fontSize: sizes.FONT_LARGE,
     fontWeight: sizes.SEMI_BOLD,
     color: colors.LIGHT_BLACK,
-    marginVertical: 10,
+    marginBottom: 10,
   },
   sub: {
     color: colors.GRAY,

@@ -3,7 +3,10 @@ import {useState} from 'react';
 import {Text, View, Pressable} from 'react-native';
 import styles from './input-list.component.style';
 import Input from '@component/login/input/input';
+import ButtonWithText from '@component/button-with-text/button-with-text';
 import {useEffect} from 'react';
+import commonStyle from '@src/styles/style';
+const {colors, sizes} = commonStyle;
 
 const MIN_ID_LENGTH = 5;
 const MIN_PW_LENGTH = 5;
@@ -26,16 +29,18 @@ const InputList = ({navigation, checkLoginSuccess}) => {
       <Input label={'아이디'} onChangeText={setId} isSecure={false} />
       <View style={styles.Horizon}></View>
       <Input label={'비밀번호'} onChangeText={setPw} isSecure={true} />
-      <Pressable
-        style={isValidButton ? styles.submitValid : styles.submit}
-        onPress={() => {
-          isValidButton && checkLoginSuccess(id, pw);
-        }}>
-        <Text
-          style={isValidButton ? styles.submitTextValid : styles.submitText}>
-          완료
-        </Text>
-      </Pressable>
+
+      <View style={styles.submit}>
+        <ButtonWithText
+          title="완료"
+          width={100}
+          onPress={() => {
+            isValidButton && checkLoginSuccess(id, pw);
+          }}
+          background={isValidButton ? colors.YELLOW : colors.GRAY}
+          color={isValidButton ? colors.BLACK : colors.WHITE}
+        />
+      </View>
     </View>
   );
 };
