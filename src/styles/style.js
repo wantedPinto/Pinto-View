@@ -22,6 +22,7 @@ export default {
     SEMI_BOLD: '800',
     MEDUIM_BOLD: '600',
     REGULAR_BOLD: '400',
+    LIGHT_BOLD: '300',
 
     MARGIN_10: 10,
     MARGIN_15: 15,
