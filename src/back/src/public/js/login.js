@@ -1,9 +1,17 @@
-const dotenv = require('dotenv');
 const passport = require('passport');
+const local = require('./localStrategy');
+const User = require('../models/user');
 
-dotenv.config();
-const pageRouter = require('./routes/page');
-const { sequelize } = requrie('./models');
-const passportConfig = requrie('./passport');
+module.exports =() => {
+    passport.serializeUser((user, done) => {
+        done(null, user.id);
+    });
 
-const app = express();
+    passport.deserializeUser((id, done) => {
+        User.findOne({ where : {id} })
+        .then(user => done(null, user))
+        .catch(err => done(err));
+    });
+
+    local();
+};

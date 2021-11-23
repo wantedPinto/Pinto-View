@@ -14,6 +14,11 @@
 8. 대화 종료시 종료버튼 누르고 대화 종료
 */
 
+
+import handleVoice from PersonalChattingPage;
+import handleCameraSwitch from PersonalChattingPage;
+
+
 const Peer = require("peerjs");
 
 
